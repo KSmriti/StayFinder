@@ -1,0 +1,54 @@
+stayfinder/
+├── frontend/             # React app
+│   ├── App.jsx
+│   ├── index.js
+│   ├── Home.jsx
+│   ├── Listing.jsx
+│   ├── Login.jsx
+│   ├── Register.jsx
+│   ├── Navbar.jsx
+│   └── styles.css
+
+├── backend/              # Node.js + Express API
+│   ├── server.js         # Main server file
+│   ├── db.js             # MongoDB connection
+│   ├── Models/
+        -- UserModel.js      # Mongoose model
+        ├── ListingModel.js   # Mongoose model
+        ├── BookingModel.js   # Mongoose model
+    ├── Routes/
+        -- authRoutes.js     # Routes
+        ├── listingRoutes.js
+        └── bookingRoutes.js
+
+└── README.md             # Project info
+
+import React from 'react';
+
+function Register(){
+    return(
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" placeholder="Enter Username" id="username"></input>
+            <label for="password">Password:</label>
+            <input type="password" placeholder="Enter Password" id="password"></input>
+            <button type="submit">Register</button>
+        </form>
+    );
+}
+
+export default Register;
+
+import React from 'react';
+import Register from './register';
+
+function App(){
+    return(
+        <div>
+            <h1> Welcome to</h1>
+            <Register />
+        </div>
+    );
+}
+
+export default App;

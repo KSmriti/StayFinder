@@ -1,0 +1,72 @@
+h1{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color:#2c3e50;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  background-color: #efefef; 
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 23px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.form-group input {
+  width: 80%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+button {
+  width: 20%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+a{
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.login-link {
+  margin-top: 12px;
+  text-align: center;
+}
