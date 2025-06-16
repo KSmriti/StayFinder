@@ -5,6 +5,8 @@ const connectDB = require('./config/db');
 
 // Import Routes
 const authRoutes = require('./routes/auth');
+const listingRoutes = require('./routes/listings');
+const userRoutes = require('./routes/users');
 
 // Config
 dotenv.config();
@@ -19,6 +21,8 @@ app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/listings', listingRoutes);
+app.use('/api/users', userRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;

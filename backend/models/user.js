@@ -1,9 +1,9 @@
-const moongoose= require("mongoose");
+const mongoose= require("mongoose");
 
-const userSchema= new moongoose.Schema({
+const userSchema= new mongoose.Schema({
     user_id:{
-        type:Number,
-        required:true
+        type: mongoose.Schema.Types.ObjectId,  // Auto-generated unique ID
+        default: () => new mongoose.Types.ObjectId()
     },
     username:{
         type: String,
@@ -16,4 +16,4 @@ const userSchema= new moongoose.Schema({
     }
 });
 
-module.exports=moongoose.model('User', userSchema);
+module.exports=mongoose.model('User', userSchema);

@@ -1,0 +1,49 @@
+.property-section {
+  padding: 20px;
+  background-color: #fdfdfd;
+}
+
+.property-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: 600;
+}
+
+.property-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.property-card {
+  background-color: white;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+.property-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.property-card h4 {
+  margin: 10px;
+  font-size: 18px;
+  color: #222;
+}
+
+.property-card p {
+  margin: 0 10px 10px;
+  font-size: 14px;
+  color: #666;
+}
