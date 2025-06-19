@@ -7,6 +7,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const listingRoutes = require('./routes/listings');
 const userRoutes = require('./routes/users');
+const bookingRoutes = require('./routes/bookings');
 
 // Config
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/listings', listingRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/bookings', bookingRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;

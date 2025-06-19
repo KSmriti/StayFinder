@@ -1,34 +1,56 @@
+import { useEffect, useState } from 'react';
 import React from 'react';
 import Header from './header';
 import PropertySection from './propertySection';
 
 function Homepage() {
+  //SECTION:1
+  const [recentProperties, setRecentProperties] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/api/listings/recent')
+      .then(res => res.json())
+      .then(data => setRecentProperties(data))
+      .catch(err => console.error('Failed to fetch recent properties:', err));
+  }, []);
+
+  //SECTION:2
+  const [cheapestProps, setCheapestProps] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/api/listings/cheapest')
+      .then(res => res.json())
+      .then(data => setCheapestProps(data))
+      .catch(err => console.error('Error fetching cheapest listings:', err));
+  }, []);
+
+  //SECTION:3
+  const [allProperties, setAllProperties] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/api/listings')
+      .then(res => res.json())
+      .then(data => setAllProperties(data))
+      .catch(err => console.error('Error fetching listings:', err));
+  }, []);
+
   return (
     <div>
       <Header />
 
       <PropertySection 
         title="Recently Added Properties"
-        properties={[
-          { id: 1, name: "Sky View Apartment", image: "/images/villa1.jpg",location: "Mumbai" },
-          { id: 2, name: "Palm Residency", image: "/images/villa2.jpg",location: "Delhi" }
-        ]}
+        properties={recentProperties}
       />
 
       <PropertySection 
-        title="Top Rated Properties"
-        properties={[
-          { id: 3, name: "Ocean Breeze Villa", image: "/images/villa3.jpg",location: "Goa" },
-          { id: 4, name: "Lakeview House", image: "/images/villa4.jpg", location: "Bangalore" }
-        ]}
+        title="Cheapeast Properties"
+        properties={cheapestProps}
       />
 
       <PropertySection 
         title="All Properties"
-        properties={[
-          { id: 5, name: "Meadow Homes", image: "/images/villa5.jpg",  location: "Pune" },
-          { id: 6, name: "Elite Heights", image: "/images/villa1.jpg" ,location: "Chennai" }
-        ]}
+        properties={allProperties}
       />
     </div>
   );

@@ -30,3 +30,27 @@
   width: 30px;
   cursor: pointer;
 }
+
+.dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 5px 10px;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.dropdown button {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  color: #333;
+}
+
+.dropdown button:hover {
+  background-color: #f2f2f2;
+}

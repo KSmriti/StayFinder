@@ -2,9 +2,8 @@ const mongoose=require('mongoose');
 
 const listingSchema= new mongoose.Schema({
     property_id:{
-        type: Number,
-        required:true,
-        unique:true
+        type: mongoose.Schema.Types.ObjectId,  // Auto-generated unique ID
+        default: () => new mongoose.Types.ObjectId()
     },
     property_name:{
         type:String,
@@ -21,20 +20,17 @@ const listingSchema= new mongoose.Schema({
     },
     
     booked_status:{
-        type:Boolean
-    },
-
-    rating:{
-        type:Number,
-        required:true,
-        min:1,
-        default: 1
+        type:Boolean,
+        default: false
     },
 
     amenities: {
     type: [String], 
     default: []     
-  }
-});
+  },
+
+  image: { type: String },
+},
+{ timestamps: true });
 
 module.exports=mongoose.model('Listings',listingSchema); 
