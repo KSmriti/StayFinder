@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./login";
 import Homepage from './homePage';
 import Search from './search';
+import PropertyDetail from './propertyDetail';
+
 
 function App(){
     return(
@@ -15,6 +17,7 @@ function App(){
         <Route path="/login" element={<Login />} />
         <Route path="/homePage" element={<Homepage/>} />
         <Route path="/search" element={<Search />} />
+        <Route path="/property/:id" element={<PropertyDetail />} />
       </Routes>
     </Router>
     );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './styles/propertySection.css'; 
 
 function Search() {
@@ -37,12 +38,14 @@ function Search() {
       <ul>
         {results.map(({ _id, property_name, property_location, price, image }) => (
           <li key={_id} className="property-card">
+            <Link to={`/property/${_id}`}  className="property-link">
             <img src={image} alt={property_name} className="property-img" />
             <div className="listing-info">
                 <h3>{property_name}</h3>
                 <p>{property_location}</p>
                 <p>Rs.{price}</p>
             </div>
+            </Link>
           </li>
         ))}
       </ul>
