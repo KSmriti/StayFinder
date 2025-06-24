@@ -31,6 +31,7 @@ const listingSchema= new mongoose.Schema({
 
   image: { type: String },
 },
+
 { timestamps: true });
 
 module.exports=mongoose.model('Listings',listingSchema); 

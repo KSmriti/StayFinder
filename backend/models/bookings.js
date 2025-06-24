@@ -17,10 +17,13 @@ const bookingSchema=new mongoose.Schema({
         ref: 'User',                        
         required: true
     },
-
-    booking_date:{
+    check_in:{
         type:Date,
         default: Date.now
+    },
+    check_out:{
+        type:Date,
+       
     }
 });
 

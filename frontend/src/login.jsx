@@ -22,7 +22,7 @@ function Login() {
       const result = await response.json();
 
       if (response.ok) {
-        alert('Login successful!');
+        localStorage.setItem("user", JSON.stringify(result));
         navigate('/homePage'); 
       } 
       else {
